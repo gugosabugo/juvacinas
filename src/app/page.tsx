@@ -317,7 +317,7 @@ export default function Home() {
           </Typography>
 
           <Typography variant="h6" paragraph sx={{ color: '#424242', lineHeight: 1.8 }}>
-            Quando você se vacina, seu corpo aprende a se defender. É como um treino para o sistema imunológico: ele conhece o "inimigo" em um ambiente controlado e seguro, criando "memória imunológica" que dura anos ou até a vida toda.
+            Quando você se vacina, seu corpo aprende a se defender. É como um treino para o sistema imunológico: ele conhece o &quot;inimigo&quot; em um ambiente controlado e seguro, criando &quot;memória imunológica&quot; que dura anos ou até a vida toda.
           </Typography>
 
           <Box sx={{ bgcolor: 'white', p: 3, borderRadius: 2, my: 3 }}>
@@ -331,7 +331,7 @@ export default function Home() {
 
             <Box component="ul" sx={{ pl: 3 }}>
               <Typography component="li" variant="body1" paragraph>
-                <strong>Vírus ou bactérias inativados:</strong> Versões "mortas" do patógeno que não podem causar doença, mas ensinam o corpo a se defender.
+                <strong>Vírus ou bactérias inativados:</strong> Versões &quot;mortas&quot; do patógeno que não podem causar doença, mas ensinam o corpo a se defender.
               </Typography>
               <Typography component="li" variant="body1" paragraph>
                 <strong>Fragmentos do patógeno:</strong> Pedaços de proteínas ou açúcares que são suficientes para gerar resposta imune.
