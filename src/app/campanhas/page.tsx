@@ -100,7 +100,7 @@ export default function Campanhas() {
                 title={c.title}
                 description={c.description}
                 dateRange={c.dateRange}
-                buttonHref={c.href}
+                buttonHref="https://www.gov.br/saude/pt-br/vacinacao"
                 image={c.image}
                 alt={c.title}
                 buttonText="Ver Detalhes"
