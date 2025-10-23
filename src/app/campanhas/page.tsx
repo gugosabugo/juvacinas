@@ -29,170 +29,116 @@ export default function Campanhas() {
         "https://jpdiagnostica.com.br/wp-content/uploads/2019/05/Influenza-848x414.jpg",
     },
     {
-      title: "Covid-19 – Doses de Reforço",
-      description:
-        "Campanha para manter a proteção contra casos graves e hospitalizações.",
-      dateRange: "Aberta — Consulte locais",
+      title: "Covid-19 – Reforço",
+      description: "Doses de reforço disponíveis para toda a população.",
+      dateRange: "Todo o ano",
       href: "#",
       image:
-        "https://www.pmvc.ba.gov.br/wp-content/uploads/S%C3%ADmbolo-covid-19-6882296_1280.jpg",
+        "https://www.pmvc.ba.gov.br/wp-content/uploads/2021/01/vacina-covid.jpg",
     },
   ];
 
   return (
-    <Box sx={{ bgcolor: "#f5f7fa", minHeight: "100vh" }}>
-      {/* Hero Section */}
+    <>
+      {/* Hero Section - FUNDO BRANCO COM TEXTO PRETO */}
       <Box
         sx={{
-          background: "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)",
-          color: "white",
-          py: 6,
-          textAlign: "center",
+          background: "linear-gradient(135deg, #e3f2fd 0%, #c8e6c9 100%)", // Gradiente claro
+          py: 8,
+          mb: 4,
         }}
       >
-        <Container maxWidth="md">
+        <Container maxWidth="lg">
           <Typography
             variant="h3"
+            component="h1"
+            gutterBottom
             sx={{
-              fontWeight: "bold",
-              mb: 2,
-              textShadow: "2px 2px 6px rgba(0,0,0,0.3)",
+              fontWeight: 700,
+              color: "#000000", // TEXTO PRETO
             }}
           >
-            📅 Campanhas de Vacinação
+            📅 Campanhas Ativas de Vacinação
           </Typography>
-          <Typography variant="h6" sx={{ opacity: 0.9, mb: 3 }}>
-            Confira as campanhas ativas em 2025 e proteja sua saúde e de sua
-            família.
-          </Typography>
-          <Button
-            variant="contained"
-            href="/vacinas"
+          <Typography
+            variant="h6"
             sx={{
-              bgcolor: "white",
-              color: "#1976d2",
-              px: 4,
-              py: 1.2,
-              fontSize: "1rem",
-              "&:hover": { bgcolor: "#f0f0f0" },
+              color: "#424242", // TEXTO CINZA ESCURO
             }}
           >
-            Conhecer Todas as Vacinas
-          </Button>
+            Confira as campanhas de vacinação em andamento e mantenha sua
+            carteira de vacinação em dia.
+          </Typography>
         </Container>
       </Box>
 
       {/* Lista de Campanhas */}
-      <Container maxWidth="lg" sx={{ py: 6 }}>
-        <Typography
-          variant="h4"
-          align="center"
-          gutterBottom
-          sx={{ fontWeight: "bold", color: "#1976d2", mb: 4 }}
-        >
-          Campanhas Ativas
-        </Typography>
-
+      <Container maxWidth="lg" sx={{ py: 4 }}>
         <Grid container spacing={4}>
-          {campanhas.map((c, i) => (
-            <Grid key={i} size={{ xs: 12, md: 6 }}>
+          {campanhas.map((camp, index) => (
+            <Grid size={{xs:12, md:4}} key={index}>
               <CampaignCard
-                title={c.title}
-                description={c.description}
-                dateRange={c.dateRange}
-                buttonHref="https://www.gov.br/saude/pt-br/vacinacao"
-                image={c.image}
-                alt={c.title}
-                buttonText="Ver Detalhes"
+                title={camp.title}
+                description={camp.description}
+                image={camp.image}
+                alt={camp.title}
+                buttonText="Saiba mais"
+                buttonHref={camp.href}
               />
             </Grid>
           ))}
         </Grid>
 
-        <Typography
-          variant="caption"
-          display="block"
-          align="center"
-          sx={{ mt: 3 }}
-        >
-          ℹ️ Consulte sempre a secretaria de saúde local para datas, públicos
-          prioritários e postos de vacinação.
-        </Typography>
-      </Container>
+        <Divider sx={{ my: 6 }} />
 
-      <Divider sx={{ my: 6 }} />
+        {/* Informações adicionais */}
+        <Paper elevation={2} sx={{ p: 4, borderRadius: 3 }}>
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{ fontWeight: 600, color: "#000000" }} // TEXTO PRETO
+          >
+            💡 Como participar das campanhas
+          </Typography>
+          <Typography variant="body1" paragraph sx={{ color: "#424242" }}>
+            Para participar das campanhas de vacinação, basta comparecer a um
+            posto de saúde mais próximo com um documento de identificação e a
+            carteira de vacinação.
+          </Typography>
 
-      {/* Extra Section para Imagens/Informações */}
-      <Container maxWidth="lg" sx={{ py: 6 }}>
-        <Typography
-          variant="h4"
-          align="center"
-          gutterBottom
-          sx={{ fontWeight: "bold", color: "#1565c0", mb: 4 }}
-        >
-          🏥 Onde se Vacinar
-        </Typography>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ mt: 3, fontWeight: 600, color: "#000000" }} // TEXTO PRETO
+          >
+            📍 Encontre o posto mais próximo
+          </Typography>
+          <Typography variant="body1" sx={{ color: "#424242" }}>
+            Consulte o site da sua prefeitura ou ligue para a linha de
+            atendimento 136 (Saúde) para localizar os postos de vacinação
+            disponíveis na sua região.
+          </Typography>
 
-        <Grid container spacing={3}>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Paper
-              elevation={3}
+          <Box sx={{ mt: 4 }}>
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              href="https://www.gov.br/saude/pt-br/vacinacao"
+              target="_blank"
               sx={{
-                p: 3,
-                height: "100%",
-                textAlign: "center",
-                bgcolor: "#e3f2fd",
+                px: 4,
+                py: 1.5,
+                textTransform: "none",
+                fontWeight: 600,
+                borderRadius: 2,
               }}
             >
-              <img
-                src="https://publicacao.saocristovao.se.gov.br/storage/post/atencao-primaria-confira-os-servicos-disponibilizados-pelas-unidades-de-saude-de-sao-cristovao-2020-12-30-5feca3985e609.jpeg"
-                alt="Posto de Saúde"
-                style={{
-                  width: "100%",
-                  borderRadius: "8px",
-                  marginBottom: "16px",
-                }}
-              />
-              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                Postos de Saúde
-              </Typography>
-              <Typography>
-                Procure a unidade de saúde mais próxima para receber a vacina
-                durante o período da campanha.
-              </Typography>
-            </Paper>
-          </Grid>
-
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Paper
-              elevation={3}
-              sx={{
-                p: 3,
-                height: "100%",
-                textAlign: "center",
-                bgcolor: "#f3e5f5",
-              }}
-            >
-              <img
-                src="https://prefeitura.rio/wp-content/uploads/2023/08/20230815081917__N8A9634-scaled.jpg"
-                alt="Vacinação em escolas"
-                style={{
-                  width: "100%",
-                  borderRadius: "8px",
-                  marginBottom: "16px",
-                }}
-              />
-              <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                Escolas e Locais Públicos
-              </Typography>
-              <Typography>
-                Algumas campanhas contam com vacinação em escolas, centros
-                comunitários e outros locais de grande circulação.
-              </Typography>
-            </Paper>
-          </Grid>
-        </Grid>
+              Acesse o Calendário Nacional de Vacinação
+            </Button>
+          </Box>
+        </Paper>
       </Container>
-    </Box>
+    </>
   );
 }
